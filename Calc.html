@@ -1,0 +1,180 @@
+<html>
+<style>
+#calc
+{
+	height:620px;
+	width:350px;
+	border:4px solid black;
+}
+#top
+{
+	height:20px;
+	width:350px;
+	background-color:black;
+}
+#display input
+{
+	height:120px;
+	width:350px;
+	border:0px;
+	font-size:50px;
+	text-align:right;
+}
+#answer input
+{
+	height:40px;
+	width:350px;
+	border:0px;
+	font-size:30px;
+	text-align:right;
+}
+.cells
+{
+	font-size:30px;
+}
+#numbers
+{
+	height:360px;
+	width:261px;
+	position:absolute;
+	top:230px;
+	background-color:#3D3C3A;
+}
+.number
+{
+	height:85px;
+	width: 80px;
+	background-color:#3D3C3A;
+	color:white;
+	font-size:30px;
+	font-weight:lighter;
+	font-face:Comic Sans MS;
+	border-color:#3D3C3A;
+	border: 0px solid black;
+	text-decoration:none;
+}
+.number:hover
+{	
+	background-color:#6F6E6C;
+	border-radius: 40px 40px 40px 40px;
+}
+	
+.operation
+{
+	height:70px;
+	width:65px;
+	background-color:#6F6E6C;
+	border:0px;
+	color:white;
+}
+.operation:hover
+{
+	background-color:#8D8C8A;
+	border-radius: 40px 40px 40px 40px;
+}
+#bottom
+{
+	height:50px;
+	width:350px;
+	position:absolute;
+	top:583px;
+	background-color:black;
+}
+#ops
+{
+	height:360px;
+	width:65px;
+	position:absolute;
+	top:230px;
+	left:272px;	
+	background-color:#6F6E6C;
+}
+#slide
+{
+	height:360px;
+	width:24.5px;
+	position:absolute;
+	top:230px;
+	left:337px;	
+	background-color:#4DCDA2;
+}
+#id
+{
+	font-size:50px;
+	text-align:right;
+}
+</style>
+<body>
+<div id = "calc">
+<div id = "top"></div>
+<div id = "display">
+<input type = "text" id = "disp" style = "height:120px; width:350px;" readonly size = "17">
+</div>
+<div id = "answer">
+<input type = "text" style = "height:80px; width:350px; " id = "ans" readonly size = "17" >
+</div>
+<div id = "numbers">
+<p>
+	<input type = "button" class = "number" value = "7" onclick = 'display("7")'>
+	<input type = "button" class = "number" value = "8" onclick = 'display("8")'>
+	<input type = "button" class = "number" value = "9" onclick = 'display("9")'>
+<br>
+	<input type = "button" class = "number" value = "4" onclick = 'display("4")'>
+	<input type = "button" class = "number" value = "5" onclick = 'display("5")'>
+	<input type = "button" class = "number" value = "6" onclick = 'display("6")'>
+<br>
+	<input type = "button" class = "number" value = "1" onclick = 'display("1")'>
+	<input type = "button" class = "number" value = "2" onclick = 'display("2")'>
+	<input type = "button" class = "number" value = "3" onclick = 'display("3")'>
+<br>
+	<input type = "button" class = "number" value = "." onclick = 'display(".")'>
+	<input type = "button" class = "number" value = "0" onclick = 'display("0")'>
+	<input type = "button" class = "number" value = "=" onclick = 'equal()'>
+</p>
+</div>
+<div id = "ops">
+<P>
+	<input type = "button" class = "operation" value = " DEL " onclick = location.reload()>
+	<br>
+	<input type = "button" class = "operation" value = " / " onclick = 'display("/")'>
+	<br>
+	<input type = "button" class = "operation" value = " x " onclick = 'display("*")'>
+	<br>
+	<input type = "button" class = "operation" value = " - " onclick = 'display("-")'>
+	<br>
+	<input type = "button" class = "operation" value = " + " onclick = 'display("+")'>
+	<br>
+</p>
+</div>
+<div id = "slide">
+</div>
+<div id = "bottom">
+</div>
+
+</div>
+</body>
+<script>
+var ct=0;
+var dom=function(id)
+{
+return document.getElementById(id);
+}
+function equal()
+{
+dom("disp").value = dom("ans").value;
+dom("ans").value="";
+}
+function show(val)
+{
+dom("ans").value=val;
+}
+function display(val)
+{
+dom("disp").value+=val;
+if(val=='/' || val=='*' || val=='+' || val=='-' )
+ct++;
+else if(ct!=0)
+show(eval(dom("disp").value));
+}
+</script>
+</html>
