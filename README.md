@@ -1,5 +1,5 @@
-                        #**Spider Inductions: Task 1**
-===========
+                               #**Spider Inductions: Task 1**
+
 ###*Instructions:*
 
 The file "Calc" to be uploaded is a simple html with some css code.
