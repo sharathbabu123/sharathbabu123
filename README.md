@@ -7,7 +7,7 @@ Run this code by copying its content into a editor and running it in a browser.
 
 ##**Screen shot from my mobile**
 
-![Screen shot](C:\Users\Sharath\Downloads\Screen shot.png)
+![Screen shot](https://github.com/sharathbabu123/sharathbabu123.github.io/blob/master/Screen.png?raw=true)
 
 
 ##**Screen shot of the webpage yet to be posted**
